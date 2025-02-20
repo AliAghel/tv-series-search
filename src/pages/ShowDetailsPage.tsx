@@ -24,8 +24,8 @@ const ShowDetailsPage: React.FC = () => {
   if (error) {
     return (
       <Container>
-        <ErrorMessage 
-          message={error.message} 
+        <ErrorMessage
+          message={error.message}
           onRetry={() => id && execute(tvMazeService.getShowDetails(Number(id)))}
         />
       </Container>
@@ -37,7 +37,7 @@ const ShowDetailsPage: React.FC = () => {
   return (
     <Container>
       <BackLink to="/">← Back to Search</BackLink>
-      
+
       <Content>
         <ImageSection>
           {show.image?.original ? (
@@ -49,27 +49,17 @@ const ShowDetailsPage: React.FC = () => {
 
         <InfoSection>
           <Title>{show.name}</Title>
-          
-          {show.rating?.average && (
-            <Rating>⭐ {show.rating.average}/10</Rating>
-          )}
 
-          {show.genres?.length > 0 && (
-            <Genres>{show.genres.join(' • ')}</Genres>
-          )}
+          {show.rating?.average && <Rating>⭐ {show.rating.average}/10</Rating>}
 
-          {show.summary && (
-            <Summary 
-              dangerouslySetInnerHTML={{ __html: show.summary }} 
-            />
-          )}
+          {show.genres?.length > 0 && <Genres>{show.genres.join(' • ')}</Genres>}
+
+          {show.summary && <Summary dangerouslySetInnerHTML={{ __html: show.summary }} />}
 
           <MetaInfo>
             {show.status && <InfoItem>Status: {show.status}</InfoItem>}
             {show.premiered && <InfoItem>Premiered: {show.premiered}</InfoItem>}
-            {show.network?.name && (
-              <InfoItem>Network: {show.network.name}</InfoItem>
-            )}
+            {show.network?.name && <InfoItem>Network: {show.network.name}</InfoItem>}
           </MetaInfo>
         </InfoSection>
       </Content>
@@ -98,7 +88,7 @@ const Container = styled.div`
   max-width: ${({ theme }) => theme.breakpoints.wide};
   margin: 0 auto;
   padding: ${({ theme }) => theme.spacing.xl};
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: ${({ theme }) => theme.spacing.md};
   }
@@ -109,7 +99,7 @@ const BackLink = styled(Link)`
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -119,7 +109,7 @@ const Content = styled.div`
   display: grid;
   grid-template-columns: minmax(300px, 1fr) 2fr;
   gap: ${({ theme }) => theme.spacing.xl};
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
   }
@@ -154,7 +144,7 @@ const Title = styled.h1`
   margin: 0;
   color: ${({ theme }) => theme.colors.text};
   font-size: 2rem;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 1.5rem;
   }
@@ -172,7 +162,7 @@ const Genres = styled.div`
 const Summary = styled.div`
   line-height: 1.6;
   color: ${({ theme }) => theme.colors.text};
-  
+
   p {
     margin: 0;
   }

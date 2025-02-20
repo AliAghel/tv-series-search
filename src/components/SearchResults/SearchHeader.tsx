@@ -21,12 +21,12 @@ export const SearchHeader: React.FC<SearchHeaderProps> = ({
   return (
     <Container>
       <ResultsInfo>
-        Found <Strong>{totalResults}</Strong> shows 
-        {query && <> for "<Strong>{query}</Strong>"</>}
+        Found <Strong>{totalResults}</Strong> shows
+        {query && <> for &quot;{query}&quot;</>}
       </ResultsInfo>
-      
+
       <FiltersSection>
-        <SearchFilters 
+        <SearchFilters
           onFilterChange={onFilterChange}
           onClearFilters={onClearFilters}
           filters={filters}
@@ -44,7 +44,7 @@ const Container = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   width: 100%;
   box-sizing: border-box;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: ${({ theme }) => theme.spacing.md};
     border-radius: 8px;
@@ -56,7 +56,7 @@ const ResultsInfo = styled.div`
   font-size: 1.2rem;
   color: ${({ theme }) => theme.colors.text};
   margin-bottom: ${({ theme }) => theme.spacing.lg};
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 1rem;
     margin-bottom: ${({ theme }) => theme.spacing.md};
@@ -73,7 +73,7 @@ const FiltersSection = styled.div`
   align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     gap: ${({ theme }) => theme.spacing.sm};
     max-width: 100%;
@@ -82,25 +82,3 @@ const FiltersSection = styled.div`
     padding-bottom: ${({ theme }) => theme.spacing.xs}; /* For scroll shadow */
   }
 `;
-
-const ClearFiltersButton = styled.button`
-  padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.lg}`};
-  background-color: white;
-  color: ${({ theme }) => theme.colors.primary};
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  height: fit-content;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.primaryLight};
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
-  }
-`; 

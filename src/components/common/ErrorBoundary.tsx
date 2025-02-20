@@ -26,14 +26,14 @@ export class ErrorBoundary extends Component<Props, State> {
 
   public render() {
     if (this.state.hasError) {
-      return this.props.fallback || (
-        <ErrorContainer>
-          <ErrorTitle>Something went wrong</ErrorTitle>
-          <ErrorMessage>{this.state.error?.message}</ErrorMessage>
-          <RetryButton onClick={() => this.setState({ hasError: false })}>
-            Try Again
-          </RetryButton>
-        </ErrorContainer>
+      return (
+        this.props.fallback || (
+          <ErrorContainer>
+            <ErrorTitle>Something went wrong</ErrorTitle>
+            <ErrorMessage>{this.state.error?.message}</ErrorMessage>
+            <RetryButton onClick={() => this.setState({ hasError: false })}>Try Again</RetryButton>
+          </ErrorContainer>
+        )
       );
     }
 
@@ -71,4 +71,4 @@ const RetryButton = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryDark};
   }
-`; 
+`;

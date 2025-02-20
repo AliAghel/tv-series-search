@@ -6,7 +6,10 @@ const API_BASE_URL = 'https://api.tvmaze.com';
 export class TvMazeService {
   private static instance: TvMazeService;
 
-  private constructor() {}
+  constructor() {
+    // Add comment explaining why constructor is empty
+    // or remove if not needed
+  }
 
   public static getInstance(): TvMazeService {
     if (!TvMazeService.instance) {
@@ -18,7 +21,7 @@ export class TvMazeService {
   public async searchShows(query: string): Promise<SearchResponse[]> {
     try {
       const response = await axios.get<SearchResponse[]>(`${API_BASE_URL}/search/shows`, {
-        params: { q: query },
+        params: { q: query }
       });
       return response.data;
     } catch (error) {
@@ -50,7 +53,7 @@ export class TvMazeService {
   private handleError(error: AxiosError): never {
     const apiError: ApiError = {
       status: error.response?.status || 500,
-      message: error.message || 'An unexpected error occurred',
+      message: error.message || 'An unexpected error occurred'
     };
     throw apiError;
   }

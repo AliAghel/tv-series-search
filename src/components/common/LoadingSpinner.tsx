@@ -29,4 +29,4 @@ const Spinner = styled.div`
   border-top: 4px solid #0066cc;
   border-radius: 50%;
   animation: ${spin} 1s linear infinite;
-`; 
+`;

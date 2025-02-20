@@ -15,12 +15,14 @@ export const SearchProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [lastQuery, setLastQuery] = useState('');
 
   return (
-    <SearchContext.Provider value={{ 
-      searchResults, 
-      setSearchResults, 
-      lastQuery, 
-      setLastQuery 
-    }}>
+    <SearchContext.Provider
+      value={{
+        searchResults,
+        setSearchResults,
+        lastQuery,
+        setLastQuery
+      }}
+    >
       {children}
     </SearchContext.Provider>
   );
@@ -32,4 +34,4 @@ export const useSearch = () => {
     throw new Error('useSearch must be used within a SearchProvider');
   }
   return context;
-}; 
+};

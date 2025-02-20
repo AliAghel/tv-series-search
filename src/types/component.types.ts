@@ -16,4 +16,4 @@ export interface ShowListProps {
   shows: SearchResponse[];
   isLoading: boolean;
   onShowClick?: (id: number) => void;
-} 
+}

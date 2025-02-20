@@ -47,4 +47,4 @@ export interface ApiError {
 
 export interface LoadingState {
   isLoading: boolean;
-} 
+}

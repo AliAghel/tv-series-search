@@ -22,18 +22,11 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
     }
   };
 
-  return (
-    <StyledImage
-      src={imgSrc}
-      alt={alt}
-      onError={handleError}
-      loading={loading}
-    />
-  );
+  return <StyledImage src={imgSrc} alt={alt} onError={handleError} loading={loading} />;
 };
 
 const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-`; 
+`;

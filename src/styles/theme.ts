@@ -16,41 +16,41 @@ export const theme = {
     imagePlaceholder: '#f8f9fa',
     skeleton: {
       base: '#e9ecef',
-      highlight: '#f8f9fa',
+      highlight: '#f8f9fa'
     },
     filterBackground: 'white',
-    filterBadge: '#f1f3f5',
+    filterBadge: '#f1f3f5'
   },
   breakpoints: {
     smallMobile: '320px',
     mobile: '480px',
     tablet: '768px',
     desktop: '1024px',
-    wide: '1200px',
+    wide: '1200px'
   },
   spacing: {
     xs: '0.25rem',
     sm: '0.5rem',
     md: '1rem',
     lg: '1.5rem',
-    xl: '2rem',
+    xl: '2rem'
   },
   layout: {
     mobileCardHeight: '150px',
     mobileImageWidth: '100px',
     cardBorderRadius: '8px',
-    cardMinHeight: '400px',
+    cardMinHeight: '400px'
   },
   cardSizes: {
     mobile: {
       height: '150px',
-      imageWidth: '100px',
+      imageWidth: '100px'
     },
     desktop: {
       minWidth: '250px',
-      aspectRatio: '2/3',
-    },
-  },
+      aspectRatio: '2/3'
+    }
+  }
 };
 
-export type Theme = typeof theme; 
+export type Theme = typeof theme;

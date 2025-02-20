@@ -13,10 +13,10 @@ export interface SearchFilters {
   status?: 'Running' | 'Ended' | 'To Be Determined';
 }
 
-export const SearchFilters: React.FC<SearchFiltersProps> = ({ 
-  onFilterChange, 
+export const SearchFilters: React.FC<SearchFiltersProps> = ({
+  onFilterChange,
   onClearFilters,
-  filters 
+  filters
 }) => {
   return (
     <FiltersContainer>
@@ -25,7 +25,7 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
           <FilterLabel>Genre</FilterLabel>
           <Select
             value={filters.genre || ''}
-            onChange={(e) => onFilterChange({ ...filters, genre: e.target.value || undefined })}
+            onChange={e => onFilterChange({ ...filters, genre: e.target.value || undefined })}
           >
             <option value="">All Genres</option>
             <option value="Drama">Drama</option>
@@ -42,10 +42,12 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
           <FilterLabel>Rating</FilterLabel>
           <Select
             value={filters.minRating || ''}
-            onChange={(e) => onFilterChange({ 
-              ...filters, 
-              minRating: e.target.value ? Number(e.target.value) : undefined
-            })}
+            onChange={e =>
+              onFilterChange({
+                ...filters,
+                minRating: e.target.value ? Number(e.target.value) : undefined
+              })
+            }
           >
             <option value="">Any Rating</option>
             <option value="7">7+ ⭐</option>
@@ -58,7 +60,12 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
           <FilterLabel>Status</FilterLabel>
           <Select
             value={filters.status || ''}
-            onChange={(e) => onFilterChange({ ...filters, status: e.target.value as any || undefined })}
+            onChange={e =>
+              onFilterChange({
+                ...filters,
+                status: (e.target.value as SearchFilters['status']) || undefined
+              })
+            }
           >
             <option value="">Any Status</option>
             <option value="Running">Running</option>
@@ -66,14 +73,10 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
             <option value="To Be Determined">TBD</option>
           </Select>
         </FilterGroup>
-
-       
       </FiltersGroup>
 
       {Object.keys(filters).length > 0 && (
-        <ClearFiltersButton onClick={onClearFilters}>
-          Clear Filters
-        </ClearFiltersButton>
+        <ClearFiltersButton onClick={onClearFilters}>Clear Filters</ClearFiltersButton>
       )}
     </FiltersContainer>
   );
@@ -91,7 +94,7 @@ const FiltersGroup = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing.md};
   flex-wrap: wrap;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     gap: ${({ theme }) => theme.spacing.sm};
   }
@@ -120,13 +123,13 @@ const Select = styled.select`
   background-color: white;
   cursor: pointer;
   color: ${({ theme }) => theme.colors.text};
-  
+
   &:focus {
     outline: none;
     border-color: ${({ theme }) => theme.colors.primary};
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
   }
-  
+
   &:hover {
     border-color: ${({ theme }) => theme.colors.primary};
   }
@@ -153,4 +156,4 @@ const ClearFiltersButton = styled.button`
     outline: none;
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primaryLight};
   }
-`; 
+`;

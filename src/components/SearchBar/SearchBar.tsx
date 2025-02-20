@@ -2,19 +2,18 @@ import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { SearchBarProps } from '../../types/component.types';
 
-export const SearchBar: React.FC<SearchBarProps> = ({ 
-  onSearch, 
-  isLoading,
-  initialValue = '' 
-}) => {
+export const SearchBar: React.FC<SearchBarProps> = ({ onSearch, isLoading, initialValue = '' }) => {
   const [query, setQuery] = useState(initialValue);
 
-  const handleSubmit = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    if (query.trim()) {
-      onSearch(query.trim());
-    }
-  }, [query, onSearch]);
+  const handleSubmit = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+      if (query.trim()) {
+        onSearch(query.trim());
+      }
+    },
+    [query, onSearch]
+  );
 
   const handleClear = () => {
     setQuery('');
@@ -29,17 +28,13 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           <SearchInput
             type="text"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={e => setQuery(e.target.value)}
             placeholder="Search TV shows..."
             disabled={isLoading}
             aria-label="Search TV shows"
           />
           {query && (
-            <ClearButton
-              type="button"
-              onClick={handleClear}
-              aria-label="Clear search"
-            >
+            <ClearButton type="button" onClick={handleClear} aria-label="Clear search">
               ×
             </ClearButton>
           )}
@@ -56,7 +51,7 @@ const SearchContainer = styled.div`
   width: 90%;
   max-width: 500px;
   margin: 0 auto;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 85%;
   }
@@ -82,22 +77,22 @@ const SearchInput = styled.input`
   transition: all 0.2s ease;
   background-color: ${({ theme }) => theme.colors.inputBackground};
   color: ${({ theme }) => theme.colors.text};
-  
+
   &::placeholder {
     color: ${({ theme }) => theme.colors.textSecondary};
   }
-  
+
   &:focus {
     outline: none;
     border-color: ${({ theme }) => theme.colors.primary};
     box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.primaryLight};
   }
-  
+
   &:disabled {
     background-color: ${({ theme }) => theme.colors.disabled};
     cursor: not-allowed;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: ${({ theme }) => theme.spacing.sm};
     font-size: 0.9rem;
@@ -117,22 +112,22 @@ const SearchButton = styled.button`
   color: white;
   cursor: pointer;
   transition: all 0.2s ease;
-  
+
   &:hover:not(:disabled) {
     background-color: ${({ theme }) => theme.colors.primaryDark};
     transform: translateY(-1px);
   }
-  
+
   &:active:not(:disabled) {
     transform: translateY(0);
   }
-  
+
   &:disabled {
     background-color: ${({ theme }) => theme.colors.disabled};
     cursor: not-allowed;
     opacity: 0.8;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.md}`};
     font-size: 0.9rem;
@@ -159,7 +154,7 @@ const ClearButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   &:hover {
     color: ${({ theme }) => theme.colors.text};
   }

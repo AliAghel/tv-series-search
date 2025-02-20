@@ -11,7 +11,7 @@ export function useApi<T>() {
   const [state, setState] = useState<ApiState<T>>({
     data: null,
     loading: false,
-    error: null,
+    error: null
   });
 
   const execute = useCallback(async (promise: Promise<T>) => {

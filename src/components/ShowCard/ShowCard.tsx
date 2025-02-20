@@ -21,9 +21,7 @@ export const ShowCard: React.FC<ShowCardProps> = memo(({ show, onClick }) => {
             loading="lazy"
           />
         ) : (
-          <PlaceholderImage>
-            No Image Available
-          </PlaceholderImage>
+          <PlaceholderImage>No Image Available</PlaceholderImage>
         )}
       </ImageContainer>
       <Content>
@@ -35,14 +33,8 @@ export const ShowCard: React.FC<ShowCardProps> = memo(({ show, onClick }) => {
             </Rating>
           )}
         </Header>
-        <Genres>
-          {show.genres?.length > 0 
-            ? show.genres.join(' • ')
-            : 'No genres available'}
-        </Genres>
-        <ViewButton to={`/show/${show.id}`}>
-          View Details
-        </ViewButton>
+        <Genres>{show.genres?.length > 0 ? show.genres.join(' • ') : 'No genres available'}</Genres>
+        <ViewButton to={`/show/${show.id}`}>View Details</ViewButton>
       </Content>
     </Card>
   );
@@ -63,7 +55,7 @@ const Card = styled.article`
   min-height: 400px;
   width: 100%;
   box-sizing: border-box;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     flex-direction: row;
     min-height: ${({ theme }) => theme.layout.mobileCardHeight};
@@ -79,7 +71,7 @@ const ImageContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.imagePlaceholder};
   position: relative;
   overflow: hidden;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: ${({ theme }) => theme.layout.mobileImageWidth};
     height: ${({ theme }) => theme.layout.mobileCardHeight};
@@ -110,7 +102,7 @@ const Content = styled.div`
   flex-grow: 1;
   gap: ${({ theme }) => theme.spacing.sm};
   min-height: 150px;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: ${({ theme }) => theme.spacing.sm};
     min-height: auto;
@@ -185,4 +177,4 @@ const ViewButton = styled(Link)`
   }
 `;
 
-export default ShowCard; 
+export default ShowCard;

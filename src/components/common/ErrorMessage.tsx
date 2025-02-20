@@ -9,11 +9,7 @@ interface ErrorMessageProps {
 export const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, onRetry }) => (
   <Container>
     <Message>{message}</Message>
-    {onRetry && (
-      <RetryButton onClick={onRetry}>
-        Try Again
-      </RetryButton>
-    )}
+    {onRetry && <RetryButton onClick={onRetry}>Try Again</RetryButton>}
   </Container>
 );
 
@@ -42,4 +38,4 @@ const RetryButton = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryDark};
   }
-`; 
+`;

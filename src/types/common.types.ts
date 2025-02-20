@@ -19,4 +19,4 @@ export interface Theme {
     tablet: string;
     desktop: string;
   };
-} 
+}

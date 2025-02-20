@@ -21,4 +21,4 @@ export const Skeleton = styled.div<{ height?: string; width?: string; borderRadi
   );
   background-size: 200% 100%;
   animation: ${shimmer} 1.5s infinite;
-`; 
+`;

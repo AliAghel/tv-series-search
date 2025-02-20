@@ -2,17 +2,19 @@ import React, { memo } from 'react';
 import styled from 'styled-components';
 import ShowCard from '../ShowCard/ShowCard';
 import { SkeletonCard } from '../ShowCard/SkeletonCard';
-import { ShowListProps } from '../../types/component.types';
+import { ShowCardProps } from '../ShowCard/ShowCard';
+
+interface ShowListProps {
+  shows: Array<{ show: ShowCardProps['show'] }>;
+  isLoading: boolean;
+  onShowClick: (id: number) => void;
+}
 
 /**
  * ShowList component displays a grid of show cards
  * Handles loading, empty states, and show click events
  */
-export const ShowList: React.FC<ShowListProps> = memo(({ 
-  shows, 
-  isLoading, 
-  onShowClick 
-}) => {
+export const ShowList: React.FC<ShowListProps> = memo(({ shows, isLoading, onShowClick }) => {
   // Show skeleton cards while loading
   if (isLoading) {
     return (
@@ -41,10 +43,7 @@ export const ShowList: React.FC<ShowListProps> = memo(({
       <Grid role="grid" aria-label="TV Shows grid">
         {shows.map(({ show }) => (
           <GridItem key={show.id} role="gridcell">
-            <ShowCard 
-              show={show} 
-              onClick={onShowClick}
-            />
+            <ShowCard show={show} onClick={onShowClick} />
           </GridItem>
         ))}
       </Grid>
@@ -64,18 +63,19 @@ const Container = styled.div`
 const Grid = styled.div`
   display: grid;
   gap: 2rem;
-  
+
   /* Desktop: 4 cards per row */
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   /* Tablet: 2-3 cards per row */
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.desktop}) {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
-  
+
   /* Mobile: 1 card per row */
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
@@ -103,4 +103,4 @@ const EmptyMessage = styled.p`
   text-align: center;
 `;
 
-export default ShowList; 
+export default ShowList;
