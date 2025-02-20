@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import SearchBar from '../components/SearchBar/SearchBar';
 import ShowList from '../components/ShowList/ShowList';
+import { type SearchFilters as SearchFiltersType } from '../components/SearchFilters/SearchFilters';
 import { SearchHeader } from '../components/SearchResults/SearchHeader';
 import { useApi } from '../hooks/useApi';
 import { tvMazeService } from '../services/api.service';
