@@ -1,6 +1,43 @@
-# tv-series-search
+# TV Series Search Frontend
 
-A React + TypeScript application for searching TV series using the TV Maze API.
+## Project Overview
+
+A React TypeScript application for searching TV series using the TV Maze API. The application features:
+
+### Core Features
+
+- Search interface for TV series
+- Results list view with series information
+- Detailed view for individual series
+- Responsive design (mobile & desktop)
+- Error handling & loading states
+- Direct link access to detailed views
+
+### Technical Requirements
+
+- React with TypeScript
+- TV Maze API integration using Axios
+- Responsive CSS (mobile-first approach)
+- Chrome browser compatibility
+- Comprehensive testing
+- Clean, self-documenting code structure
+
+## Project Structure
+
+The project follows a modular structure with components organized into directories:
+
+### Project Structure
+
+```bash
+src/
+├── components/ # Reusable UI components
+├── pages/ # Main view components
+├── services/ # API and other services
+├── types/ # TypeScript interfaces
+├── hooks/ # Custom React hooks
+├── utils/ # Helper functions
+└── styles/ # Global styles
+```
 
 ## Project Setup
 
