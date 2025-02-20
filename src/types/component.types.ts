@@ -1,4 +1,4 @@
-import type { Show, SearchResponse } from './api.types';
+import type { SearchResponse } from './api.types';
 
 // Props for each React component
 export interface SearchBarProps {
