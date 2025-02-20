@@ -1,84 +1,133 @@
-# tv-series-search
+<div align="center">
 
-A React + TypeScript application for searching TV series using the TV Maze API.
+# TV Series Search
 
-## Project Setup
+🎬 A modern React application for searching TV series information
 
-### Prerequisites
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
+[![Styled Components](https://img.shields.io/badge/Styled_Components-5.3.9-pink.svg)](https://styled-components.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- Node.js (v14.0.0 or higher)
-- npm (v6.0.0 or higher)
+[Features](#features) •
+[Getting Started](#getting-started) •
+[Installation](#installation) •
+[Usage](#usage) •
+[Development](#development)
 
-### Initial Setup
-
-1. Create a new React project with TypeScript:
-
-```bash
-npx create-react-app my-app --template typescript
-```
-
-2. Navigate to project directory:
-
-```bash
-cd my-app
-```
-
-3. Install the necessary dependencies:
-
-```bash
-npm install axios @types/axios react-router-dom @types/react-router-dom
-npm install styled-components @types/styled-components
-npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
-```
-
-### Code Quality Setup
-
-1. ESLint and Prettier are configured for code quality and consistent formatting:
-
-```bash
-npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
-```
-
-2. Configuration files are included:
-
-   - `.eslintrc` - ESLint configuration
-   - `.prettierrc` - Prettier configuration
-
-3. Available scripts:
-
-```bash
-# Check for ESLint issues
-npm run lint
-
-# Fix ESLint issues automatically
-npm run lint:fix
-
-# Format code with Prettier
-npm run format
-```
+</div>
 
 ## Features
 
-- Search TV series using the TV Maze API
-- View detailed information about TV series
-- Responsive design for mobile and desktop viewing
+- 🔍 Search through TV series database
+- 📱 Fully responsive design
+- 🎯 Advanced filtering options
+- ⚡ Real-time search results
+- 🎨 Modern, clean UI
+- 🚀 Fast and lightweight
 
-## API Reference
+## Getting Started
 
-This project uses the [TV Maze API](https://www.tvmaze.com/api) for fetching TV series data.
+### Prerequisites
 
-### Development
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-To start the development server:
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/tv-series-search.git
+```
+
+2. Navigate to the project directory
+
+```bash
+cd tv-series-search
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+### Usage
+
+Start the development server:
 
 ```bash
 npm start
 ```
 
-### Building
+Visit [http://localhost:3000](http://localhost:3000)
 
-To create a production build:
+## Development
+
+### Available Scripts
 
 ```bash
+# Start development server
+npm start
+
+# Run tests
+npm test
+
+# Build for production
 npm run build
+
+# Run linter
+npm run lint
+
+# Fix lint issues
+npm run lint:fix
 ```
+
+### Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+├── pages/         # Page components
+├── services/      # API services
+├── context/       # React Context
+├── hooks/         # Custom hooks
+├── types/         # TypeScript types
+└── styles/        # Global styles
+```
+
+## API
+
+This project uses the [TV Maze API](https://www.tvmaze.com/api) for fetching TV series data.
+
+### Example Endpoints
+
+```typescript
+// Search shows
+GET /search/shows?q=:query
+
+// Get show details
+GET /shows/:id
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+- [TV Maze API](https://www.tvmaze.com/api) for providing the TV series data
+- [Cursor](https://www.cursor.com) for development assistance and documentation help
+
+
