@@ -23,7 +23,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch, isLoading, initi
 
   return (
     <SearchContainer>
-      <SearchForm onSubmit={handleSubmit}>
+      <SearchForm role="form" onSubmit={handleSubmit}>
         <InputWrapper>
           <SearchInput
             type="text"

@@ -33,7 +33,9 @@ export const ShowCard: React.FC<ShowCardProps> = memo(({ show, onClick }) => {
             </Rating>
           )}
         </Header>
-        <Genres>{show.genres?.length > 0 ? show.genres.join(' • ') : 'No genres available'}</Genres>
+        <Genres>
+          {show.genres && show.genres.length > 0 ? show.genres.join(' • ') : 'No genres available'}
+        </Genres>
         <ViewButton to={`/show/${show.id}`}>View Details</ViewButton>
       </Content>
     </Card>

@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import styled from 'styled-components';
 import ShowCard from '../ShowCard/ShowCard';
 import { SkeletonCard } from '../ShowCard/SkeletonCard';
-import { ShowCardProps } from '../ShowCard/ShowCard';
+import { ShowCardProps } from '../../types/component.types';
 
 interface ShowListProps {
   shows: Array<{ show: ShowCardProps['show'] }>;

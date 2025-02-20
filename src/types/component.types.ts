@@ -8,8 +8,18 @@ export interface SearchBarProps {
 }
 
 export interface ShowCardProps {
-  show: Show;
-  onClick?: (id: number) => void;
+  show: {
+    id: number;
+    name: string;
+    image?: {
+      medium: string;
+    };
+    rating?: {
+      average: number;
+    };
+    genres?: string[];
+  };
+  onClick: (id: number) => void;
 }
 
 export interface ShowListProps {
