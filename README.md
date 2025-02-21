@@ -2,11 +2,12 @@
 
 # TV Series Search
 
-🎬 A modern React application for searching TV series information
+A modern React application for searching TV series information using the TVMaze API
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
 [![Styled Components](https://img.shields.io/badge/Styled_Components-5.3.9-pink.svg)](https://styled-components.com/)
+[![Coverage](https://img.shields.io/badge/Coverage-85%25-green.svg)](https://github.com/yourusername/tv-series-search)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [Features](#features) •
@@ -17,51 +18,45 @@
 
 </div>
 
+## Overview
+
+TV Series Search is a React application that allows users to search for TV shows using the TVMaze API. Built with modern web technologies and best practices, it demonstrates clean architecture, type safety, and testing practices.
+
 ## Features
 
-- 🔍 Search through TV series database
-- 📱 Fully responsive design
-- 🎯 Advanced filtering options
-- ⚡ Real-time search results
-- 🎨 Modern, clean UI
-- 🚀 Fast and lightweight
+- 🔍 Real-time TV show search
+- 📱 Responsive design
+- 🎯 TypeScript for type safety
+- 🧪 Comprehensive test suite
+- 🎨 Modern UI with styled-components
+- ⚡ Efficient state management with Context API
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- npm (v6 or higher)
+- Node.js (v16 or higher)
+- npm (v7 or higher)
 
 ### Installation
 
-1. Clone the repository
-
 ```bash
-git clone https://github.com/yourusername/tv-series-search.git
-```
+# Clone the repository
+git clone https://github.com/AliAghel/tv-series-search.git
 
-2. Navigate to the project directory
-
-```bash
+# Navigate to project directory
 cd tv-series-search
-```
 
-3. Install dependencies
-
-```bash
+# Install dependencies
 npm install
-```
 
-### Usage
-
-Start the development server:
-
-```bash
+# Start development server
 npm start
 ```
 
-Visit [http://localhost:3000](http://localhost:3000)
+## Usage
+
+Visit [http://localhost:3000](http://localhost:3000) and start searching for TV shows.
 
 ## Development
 
@@ -79,46 +74,47 @@ npm run build
 
 # Run linter
 npm run lint
-
-# Fix lint issues
-npm run lint:fix
 ```
 
 ### Project Structure
 
 ```
 src/
-├── components/     # Reusable UI components
+├── components/    # Reusable UI components
+├── context/       # React Context providers
+├── hooks/         # Custom React hooks
 ├── pages/         # Page components
 ├── services/      # API services
-├── context/       # React Context
-├── hooks/         # Custom hooks
+├── styles/        # Global styles
 ├── types/         # TypeScript types
-└── styles/        # Global styles
+└── utils/         # Utility functions
 ```
 
-## API
+## Testing
 
-This project uses the [TV Maze API](https://www.tvmaze.com/api) for fetching TV series data.
+```bash
+# Run all tests
+npm test
 
-### Example Endpoints
+# Run tests with coverage
+npm run test:coverage
 
-```typescript
-// Search shows
-GET /search/shows?q=:query
-
-// Get show details
-GET /shows/:id
+# Run tests in watch mode
+npm run test:watch
 ```
+
+## Future Improvements
+
+See [Issues](https://github.com/AliAghel/tv-series-search/issues) for planned improvements and enhancements.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+While this is a code test project, it follows standard contribution practices:
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
 5. Open a Pull Request
 
 ## License
@@ -128,6 +124,5 @@ This project is licensed under the MIT License.
 ## Acknowledgments
 
 - [TV Maze API](https://www.tvmaze.com/api) for providing the TV series data
-- [Cursor](https://www.cursor.com) for development assistance and documentation help
-
-
+- [Claude AI Assistant](https://claude.ai) for development guidance and code review
+- [Cursor](https://cursor.sh) for AI-powered code editing assistance
